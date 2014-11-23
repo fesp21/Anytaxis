@@ -1,0 +1,48 @@
+extend layout
+block content
+  p
+    | taxi 101 <br/>
+    form(action="/anytaxis", method="post")
+        <input type="hidden" name="x_wtf" value="what the f.">
+        <input type="submit" value="any Taxis">
+    | <br/>  <a href="./user/id:TaxiAvailable"> I'm available </a>
+    | <br/><a href="./anytaxis11"> Any Taxis </a>
+  p
+    | Donec congue lacinia dui, a porttitor
+    | lectus laoreet. Nunc eu <br/>
+    | <img src="./images/joanRiversdownload.jpg" alt="Smiley face" height="184" width="120">
+    img(src="images/joanRiversdownload.jpg", alt="Child Eating KitKat")
+    | 
+  .widget
+    h1 Buy
+    p
+      | 
+
+  <hr/>
+
+  div(style="background-color: pink;  border:solid").
+    Know what would go nice w/ that Jewlery more Jewlery!  And old ladie hair doo's<br/>
+
+    <hr/>
+
+      <form name="simMethod" method = "post" action = "/simMethod">
+      <INPUT type='hidden' name='x_amount' value='123.45' />
+      <input type='submit' value='simMethod'>
+      </form>
+
+    <hr/>
+
+
+block sidebar
+  .widget
+    h1 Widget
+    p
+      | Sed auctor neque eu tellus rhoncus ut
+      | eleifend nibh porttitor. Ut in nulla enim.
+    p
+      | Go ahead enter some sh_:
+      form(action="/file-upload", method="post" enctype="multipart/form-data")
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="file" name="thumbnail">
+        <input type="submit">
