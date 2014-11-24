@@ -1,0 +1,249 @@
+<html>
+    <head>
+        <title>Taxi Log</title>
+ 
+  <!-- Scale to device width. -->
+  <meta name="viewport" content="user-scalable=no, width=device-width" />
+
+  <!-- Allow standalone mode on home screen. -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+ 
+  <!-- Use the default status bar. -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  
+  <!-- Use jQuery for AJAX. -->
+  <script src="./jquery.js"></script>
+
+  <!-- Specify a 320x460 start-up image. -->
+  <link rel="apple-touch-startup-image" href="./startup.png" />
+
+  <!-- Choose a 57x57 image for the icon. -->
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+
+        <!-- Use CSS to get iPhone styling. -->
+        <style>
+            @import url(medical-log.css) ;
+            </style>
+        </head>
+    <canvas id="graph" width="320" height="160">
+    </canvas>
+    
+<script>
+
+    
+    
+    var Graph = document.getElementById("graph") ;
+    var Ctx = Graph.getContext('2d') ;
+    
+    var MinX = -10 ;
+    var MaxX = 10 ;
+    var MinY = -10 ;
+    var MaxY = 10 ;
+    
+    var CurrentScale = 1.0 ;
+    
+    function XMax() {
+        return CurrentScale * MaxX ;
+    }
+
+function YMax() {
+    return CurrentScale * MaxY ;
+}
+
+function XMin() {
+    return CurrentScale * MinX ;
+}
+
+function YMin() {
+    return CurrentScale * MinY ;
+}
+
+var Y = function (x) {
+    return Math.sin(x) ;
+} ;
+
+
+function CanvasBound(v) {
+    if (v < -32768)
+    return -32768 ;
+    else if (v > 32768)
+    return 32768 ;
+    else
+    return v ;
+}
+
+
+function DeviceY(logicalY) {
+    var ratio =
+    (YMax() - logicalY) /
+    (YMax() - YMin()) ;
+    return CanvasBound(ratio * Graph.height) ;
+}
+
+function DeviceX(logicalX) {
+    var ratio =
+    (logicalX - XMin()) /
+    (XMax() - XMin()) ;
+    return CanvasBound(ratio * Graph.width) ;
+}
+
+
+function DrawLine(logicalX0,logicalY0,logicalX1,logicalY1) {
+    Ctx.beginPath() ;
+    Ctx.moveTo(DeviceX(logicalX0),DeviceY(logicalY0)) ;
+    Ctx.lineTo(DeviceX(logicalX1),DeviceY(logicalY1)) ;
+    Ctx.stroke() ;
+}
+
+
+function DrawFunction(f) {
+    var delta = ((XMax() - XMin()) / Graph.width) ;
+    var lastX = XMin() ;
+    var lastY = f(XMin()) ;
+    for (var x = XMin(); x <= XMax(); x += delta) {
+        var newX = x ;
+        var newY = f(newX) ;
+        DrawLine(lastX,lastY,newX,newY) ;
+        lastX = newX ;
+        lastY = newY ;
+    }
+}
+
+function Render() {
+    
+    if (!Graph.getContext)
+    return ;
+    
+    // Clear whatever was on the canvas.
+    Ctx.clearRect(0,0,Graph.width,Graph.height) ;
+    
+    DrawFunction(Y) ;
+    
+}
+
+Render() ;
+
+function HandleScale(event) {
+    CurrentScale = event.scale ;
+    Render() ;
+}
+
+function FixScale(event) {
+    MinX *= event.scale ;
+    MinY *= event.scale ;
+    MaxX *= event.scale ;
+    MaxY *= event.scale ;
+}
+
+
+Graph.ontouchmove = HandleScale;
+Graph.ongestureend = FixScale ;
+
+function init() {
+}
+
+function myPost(aUrl, json)
+{
+    var http = new XMLHttpRequest();
+    var url = aUrl; //"http://localhost:3000/each";
+    //var params = "lorem=ipsum&name=binny";
+    var params = "data=" + json;
+    
+    http.open("POST", url, true);
+    
+    //Send the proper header information along with the request
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.setRequestHeader("Content-length", params.length);
+    http.setRequestHeader("Connection", "close");
+    
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+            ;//alert(http.responseText);
+        }
+    }
+    http.send(params);
+}
+    
+    toggle = true;
+function doFunction(str)
+{
+    //var selection = document.getElementById('bgcolor').value;
+    var body = document.getElementById('body').value;
+    body =  (body.length >0) ? ',"body" : ' + '"' + document.getElementById('body').value + '"' : "";
+    //alert(body); return;
+    
+    var div = document.getElementById('add-event-butto');
+    if (toggle)
+    {
+        div.style.backgroundColor = 'green';
+        toggle = false;
+    }
+    else
+    {
+        div.style.backgroundColor = 'yellow';
+        toggle = true;
+    }
+    var root = "http://anytaxis-40435.onmodulus.net";
+    //var root = "http://localhost:3000";
+
+    //var url = root + "/anytaxis11";
+    
+    if (str == "anytaxis22")
+    {
+        var url = root + "/anytaxis22";
+        var json = '{"id":1, "to":"mastronardif@netcarrier.com", "subject":"Taxi"'+ body + '}';
+        //alert(json);return;
+        return myPost(url, json);
+    }
+    
+    //var url = "http://localhost:3000/anytaxis11";
+    //var url = "http://anytaxis-40435.onmodulus.net/anytaxis11";
+    //var req = new XMLHttpRequest() ;
+    //req.open("GET", url, true) ;
+    //req.send(null) ;
+}
+</script>
+
+<h1>Hello, Taxis!</h1>
+<table>
+    <tr>
+        <td>
+<div id="add-event-butto" class="button" onclick="doFunction('anytaxis22');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+     On Dutty
+</div>
+</td>
+    
+    <td>
+        <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+            Off Dutty
+        </div>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+                Mark Location
+            </div>
+        </td>
+        
+        <td>
+            <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+                ?
+            </div>
+        </td>
+    </tr>
+
+        </table>
+Text: <input type="text" id="body" name="body" value="any T's">
+
+<div id="add-event-butto" class="button" onclick="doFunction('str');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+    Any Taxis
+</div>
+
+To: <input type="text" id="to" name="to" value="mastronardif@netcarrier.com;9088580954@vtext.com">
+
+
+<br/><i>Version: 101 Nov 22 2014</i>
+
+</htmlTaxi11>
