@@ -38,7 +38,8 @@ function anytaxis11(res, json)
   console.log("obj.to "+ obj.to);
     var to =  obj.to;
     var sub =  (obj.subject === undefined) ? "no sub" : obj.subject;
-    var body =  (obj.body === undefined) ? "" : obj.body;
+    var loc =  (obj.loc === undefined) ? "" : "I am at: " + obj.loc.lat;
+    var body =  (obj.body === undefined) ? "" : obj.body + loc;
 
 
     var data = {

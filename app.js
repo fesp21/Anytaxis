@@ -66,6 +66,7 @@ app.post('/anytaxis22', function(req, res) {
   var obj  = JSON.parse(data);
   
   console.log(obj);
+  console.log("obj.loc "+ obj.loc );
   console.log("obj.id "+ obj.id );
   console.log("obj.to "+ obj.to );
   var results = anytaxis.foo11(res, data);

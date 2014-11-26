@@ -11,8 +11,10 @@
   <!-- Use the default status bar. -->
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   
-  <!-- Use jQuery for AJAX. -->
+  <!-- Use jQuery for AJAX. 
   <script src="./jquery.js"></script>
+-->
+
 
   <!-- Specify a 320x460 start-up image. -->
   <link rel="apple-touch-startup-image" href="./startup.png" />
@@ -23,8 +25,10 @@
         <!-- Use CSS to get iPhone styling. -->
         <style>
             @import url(medical-log.css) ;
-            </style>
-        </head>
+        </style>
+ <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="./javascripts/geo.js"></script>
+    </head>
     <canvas id="graph" width="320" height="160">
     </canvas>
     
@@ -142,10 +146,11 @@ Graph.ongestureend = FixScale ;
 function init() {
 }
 
+
 function myPost(aUrl, json)
 {
     var http = new XMLHttpRequest();
-    var url = aUrl; //"http://localhost:3000/each";
+    var url  = aUrl; //"http://localhost:3000/each";
     //var params = "lorem=ipsum&name=binny";
     var params = "data=" + json;
     
@@ -163,15 +168,20 @@ function myPost(aUrl, json)
     }
     http.send(params);
 }
-    
+    geo_init00();
+
     toggle = true;
 function doFunction(str)
 {
     //var selection = document.getElementById('bgcolor').value;
     var body = document.getElementById('body').value;
     body =  (body.length >0) ? ',"body" : ' + '"' + document.getElementById('body').value + '"' : "";
-    //alert(body); return;
     
+    var to = document.getElementById('x_to').value;
+    to =  (to.length >0) ? ',"to" : ' + '"' + document.getElementById('x_to').value + '"' : "";
+    //alert(body); return;
+    //alert(to); return;
+
     var div = document.getElementById('add-event-butto');
     if (toggle)
     {
@@ -183,16 +193,57 @@ function doFunction(str)
         div.style.backgroundColor = 'yellow';
         toggle = true;
     }
-    var root = "http://anytaxis-40435.onmodulus.net";
-    //var root = "http://localhost:3000";
+    //var root = "http://anytaxis-40435.onmodulus.net";
+    var root = "http://localhost:3000";
 
     //var url = root + "/anytaxis11";
     
     if (str == "anytaxis22")
     {
         var url = root + "/anytaxis22";
-        var json = '{"id":1, "to":"mastronardif@netcarrier.com", "subject":"Taxi"'+ body + '}';
+        //var json = '{"id":1, "to":"mastronardif@netcarrier.com", "subject":"Taxi"'+ body + '}';
+        var json = '{"id":1, "subject":"Taxi"' + to + body + '}';
         //alert(json);return;
+        return myPost(url, json);
+    }
+
+    if (str == "anytaxis22/withloc")
+    {
+        var url = root + "/anytaxis22";
+
+        geo_init00();
+        //getLocation(); return;    
+        var loc = TestShit();
+        var oLoc  = JSON.parse(loc);
+        var location =  '"loc" : ' +  loc;
+        //alert(location); return;
+
+
+
+
+        //var json = '{"id":1, "to":"mastronardif@netcarrier.com", "subject":"Taxi"'+ body + '}';
+        var json = '{"id":1, "subject":"Taxi"' + to + body + ', ' + location + '}';
+
+        //alert(json);
+
+        // append loc onto body.
+        //var data = { local: loc };
+        //var strLoc = JSON.stringify(data)
+        //json = '{"id":1, "subject":"Taxi"' + to + body + loc + '}';
+        var oLoc = JSON.parse(json);  
+        //alert (oLoc.loc.lat); return;
+
+        //var obj = JSON.parse(JSON.stringify(item));
+        //alert(obj.loc);
+
+        //return;
+        
+        body = JSON.stringify(body);
+
+        //alert(body);
+
+
+        //alert(str + ' ' + json);return;
         return myPost(url, json);
     }
     
@@ -222,8 +273,8 @@ function doFunction(str)
     
     <tr>
         <td>
-            <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
-                Mark Location
+            <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22/withloc');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+                *Mark Location
             </div>
         </td>
         
@@ -241,9 +292,10 @@ Text: <input type="text" id="body" name="body" value="any T's">
     Any Taxis
 </div>
 
-To: <input type="text" id="to" name="to" value="mastronardif@netcarrier.com;9088580954@vtext.com">
+To: <input type="text" id="x_to" name="x_to" value="mastronardif@netcarrier.com;9088580954@vtext.com">
+<br/> lat: <input type="text" id="x_lat" name="x_lat" value="wtf">
 
 
-<br/><i>Version: 101 Nov 22 2014</i>
+<br/><i>Version: 101 Nov 26 2014 5:22</i>
 
 </htmlTaxi11>
