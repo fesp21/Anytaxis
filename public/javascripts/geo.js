@@ -1,4 +1,4 @@
-function myalert(str) {alert(str);}
+function myalert(str) {alert(str);return str;}
 
 
 var vlat = "";
@@ -6,6 +6,7 @@ var vlon = "";
 var myGeo = {
      lat: "12"
     ,lon: ""
+    ,address: ""
 }
 
 function geo_init00()
@@ -18,6 +19,7 @@ function geo_init00()
         //document.forms[0].elements.lat.value = startPos.coords.latitude;
         //document.forms[0].elements.lon.value = startPos.coords.longitude;
         document.getElementById('x_lat').value = startPos.coords.latitude;
+        document.getElementById('x_lon').value = startPos.coords.longitude;
         myGeo.lat = startPos.coords.latitude;
         myGeo.lon = startPos.coords.longitude;
 
@@ -97,10 +99,12 @@ function codeLatLng(lat, lng)
                     
                     //alert(results[0].formatted_address)
                     //info = results[0].formatted_address + "df";
-                    document.forms[0].elements.gisaddress.value = results[0].formatted_address;
+                    //document.forms[0].elements.gisaddress.value = results[0].formatted_address;
+                    document.getElementById('x_address').value = results[0].formatted_address;
+
                     //alert(results[0].formatted_address);
-                    //info = results[0].formatted_address; 
-                    alert('aaaa'+results[0].formatted_address);
+                    info = results[0].formatted_address; 
+                    //alert('aaaa'+results[0].formatted_address);
 
                     //find country name
                     for (var i = 0; i < results[0].address_components.length; i++) {
@@ -133,9 +137,12 @@ function codeLatLng(lat, lng)
     {
         var lat  = myGeo.lat; //document.forms[0].elements.lat.value;
         var lng  = myGeo.lon; //document.forms[0].elements.lon.value;
+
 //alert(JSON.stringify(myGeo));
 
         var info = codeLatLng(lat, lng);
+        //myGeo.address = info;
+        myGeo.address = document.getElementById('x_address').value;
         return JSON.stringify(myGeo);
         //document.forms[0].elements.lon.value = "clear the shit";
         //can not do this codeLatLng is async! alert('test shit'+info);

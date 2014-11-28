@@ -27,6 +27,8 @@ function setResults(str)
     results = str;
 }
 
+
+
 function anytaxis11(res, json)
 {
     //We pass the api_key and domain to the wrapper, or it won't be able to identify + send emails
@@ -38,7 +40,7 @@ function anytaxis11(res, json)
   console.log("obj.to "+ obj.to);
     var to =  obj.to;
     var sub =  (obj.subject === undefined) ? "no sub" : obj.subject;
-    var loc =  (obj.loc === undefined) ? "" : "I am at: " + obj.loc.lat;
+    var loc =  (obj.loc === undefined) ? "" : "I am at: " + obj.loc.address;
     var body =  (obj.body === undefined) ? "" : obj.body + loc;
 
 

@@ -169,6 +169,7 @@ function myPost(aUrl, json)
     http.send(params);
 }
     geo_init00();
+    //codeLatLng()
 
     toggle = true;
 function doFunction(str)
@@ -193,8 +194,8 @@ function doFunction(str)
         div.style.backgroundColor = 'yellow';
         toggle = true;
     }
-    //var root = "http://anytaxis-40435.onmodulus.net";
-    var root = "http://localhost:3000";
+    var root = "http://anytaxis-40435.onmodulus.net";
+    //var root = "http://localhost:3000";
 
     //var url = root + "/anytaxis11";
     
@@ -205,6 +206,15 @@ function doFunction(str)
         var json = '{"id":1, "subject":"Taxi"' + to + body + '}';
         //alert(json);return;
         return myPost(url, json);
+    }
+//alert(str);
+    if (str == "anytaxis22/withloc/setLocale")
+    {
+        //alert('okoeeekkok');
+        geo_init00();
+            //getLocation(); return;    
+        TestShit();
+        return;
     }
 
     if (str == "anytaxis22/withloc")
@@ -217,9 +227,6 @@ function doFunction(str)
         var oLoc  = JSON.parse(loc);
         var location =  '"loc" : ' +  loc;
         //alert(location); return;
-
-
-
 
         //var json = '{"id":1, "to":"mastronardif@netcarrier.com", "subject":"Taxi"'+ body + '}';
         var json = '{"id":1, "subject":"Taxi"' + to + body + ', ' + location + '}';
@@ -279,8 +286,8 @@ function doFunction(str)
         </td>
         
         <td>
-            <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
-                ?
+            <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22/withloc/setLocale');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+                Set Loc
             </div>
         </td>
     </tr>
@@ -294,8 +301,10 @@ Text: <input type="text" id="body" name="body" value="any T's">
 
 To: <input type="text" id="x_to" name="x_to" value="mastronardif@netcarrier.com;9088580954@vtext.com">
 <br/> lat: <input type="text" id="x_lat" name="x_lat" value="wtf">
+<br/> lat: <input type="text" id="x_lon" name="x_lon" value="lll">
+<br/> loc: <input type="text" id="x_address" name="x_address" value="ffff">
 
 
-<br/><i>Version: 101 Nov 26 2014 5:22</i>
+<br/><i>Version: 101 Nov 28 2014 3:35</i>
 
 </htmlTaxi11>
