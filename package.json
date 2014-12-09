@@ -1,6 +1,6 @@
 {
   "name": "anytaxis",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
   "description": "My application description.",
   "main": "./app.js",
   "private": true,
@@ -15,6 +15,10 @@
     "moment": "^2.8.3",
     "needle": "*",
     "request": "*",
-    "mailgun-js":"0.5"
+    "mailgun-js": "0.5"
+  },
+  "subdomain": "undefined-anytaxis",
+  "engines": {
+    "node": "0.10.x"
   }
 }

@@ -1,0 +1,500 @@
+    3  ./Contents/MacOS/iclicker 
+    4  ./Contents/MacOS/iclicker 
+    5  ./Contents/MacOS/iclicker 
+    6  ./Contents/MacOS/iclicker 
+    7  ./Contents/MacOS/iclicker 
+    8  ./Contents/MacOS/iclicker 
+    9  ./Contents/MacOS/iclicker 
+   10  ./Contents/MacOS/iclicker 
+   11  cd  /Users/frank.mastronardi/workspace/GoIOSDevSources/i-clicker-go-ios 
+   12  find . -name '*.js' -exec grep -i 'btnRegisteR' {} \; -print
+   13  find . -name '*.m' -exec grep -i 'b\site' {} \; -print
+   14  find . -name '*.m' -exec grep -i 'b\site ' {} \; -print
+   15  find . -name '*.m' -exec grep -i 'clicker://siteLicenseAvailable"' {} \; -print
+   16  find . -name '*.m' -exec grep -i 'No Site License"' {} \; -print
+   17  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   18  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   19  `echo QWxhZGRpbjpvcGVuIHNlc2FtZQ== | base64 --decode`
+   20  openssl enc -base64 <<< 'Hello, World!'
+   21  openssl enc -base64 <<< 'mastronardif@gmail.com'
+   22  openssl enc -base64 <<< 'mastronardif\@gmail.com'
+   23  openssl enc -base64 <<< 'apple123!'
+   24  openssl enc -base64 <<< 'apple123!'
+   25  whereis nodejs
+   26  nodejs
+   27  node
+   28  pwd
+   29  ls
+   30  pwd
+   31  pwd
+   32  find . -name '*.m' -exec grep -i 'NSString *stringText = @"clicker.com' {} \; -print
+   33  find . -name '*.m' -exec grep -i 'NSString *stringText = @".com' {} \; -print
+   34  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   35  pwd
+   36  ls
+   37  pwd
+   38  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   39  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   40  find . -name '*.m' -exec grep -i 'NSString *stringText = @"clicker.com' {} \; -print
+   41  pwd
+   42  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   43  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   44  pwd
+   45  ls
+   46  pwd
+   47  history
+   48  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   49  pwd
+   50  find .
+   51  find . | grep API.plist
+   52  find . -name '*.m' -exec grep -i 'NSString *stringText = @" Your account is associated with a school using a site' {} \; -print
+   53  find . -name '*.m' -exec grep -i 'Your account is associated with a school using a site' -print
+   54  pwd
+   55  cd  /Users/frank.mastronardi/Downloads/Payload 
+   56  ls
+   57  ls -trla
+   58  cd HelloWorld.app.zip.app/
+   59  ls
+   60  ls -trla
+   61  ls
+   62  ./HelloWorld 
+   63  pwd
+   64  open ./Icon-72.png 
+   65  pwd
+   66  cd ..
+   67  cd   /Users/frank.mastronardi/Downloads 
+   68  pwd
+   69  ipconfig
+   70  ifconfig
+   71  pwd
+   72  /Users/frank.mastronardi/Downloads/Register_iClicker_files 
+   73  cd /Users/frank.mastronardi/Downloads/Register_iClicker_files 
+   74  ls
+   75  history | grep find
+   76  history
+   77  history | grep find
+   78  pwd
+   79  ls
+   80  find
+   81  find .
+   82  history | grep find
+   83  grep -rnw 'directory' -e "btnRegister"
+   84  grep -rnw '.' -e "btnRegister"
+   85  find . -name '*.js' -exec grep -i 'btnRegister' {} \; -print
+   86  find . -name '*.js' -exec grep -i 'btnRegisteR' {} \; -print
+   87  find . -name '*.js' -exec grep  'btnRegisteR' {} \; -print
+   88  find . -name '*.js' -exec grep -i 'btnRegisteR' {} \; -print
+   89  pwd
+   90  cd   /Users/frank.mastronardi/workspace/GoIOSDevSources 
+   91  ls
+   92  ls -tlra
+   93  cd i-clicker-go-android/
+   94  ls
+   95  ls -tra
+   96  ls -tlra
+   97  ant debug
+   98  pwd
+   99  cd  /Users/frank.mastronardi/i-clicker-go-android 
+  100  ls
+  101  ls -tr;a
+  102  ls -trla
+  103  histroy
+  104  history
+  105  find . -name '*.js' -exec grep -i 'btnRegister' {} \; -print
+  106  find . -name '*.js' -exec grep -i 'btnRegister' {} \; -print
+  107  find . -name '*.*' -exec grep -i 'import' {} \; -print
+  108  ant
+  109  ant debug
+  110  ls
+  111  dir *.apk
+  112  dir *.java
+  113  find .
+  114  find . | grep apk
+  115  find . | grep java
+  116  ls
+  117  ant
+  118  find . | grep mk
+  119  la
+  120  pwd
+  121  ls
+  122  ls -trla
+  123  ant --help
+  124  ls -trla
+  125  ant -f AndroidManifest.xml 
+  126  ls
+  127  pwd
+  128  history
+  129  find . -name '*.*' -exec grep -i 'import' {} \; -print
+  130  find . -name '*.*' -exec grep -i 'Your account is no longer'' {} \; -print
+  131  find . -name '*.*' -exec grep -i 'Your account' {} \; -print
+  132  find . -name '*.*' -exec grep -i 'Your account is ' {} \; -print
+  133  find . -name '*.*' -exec grep -i 'Your account is no ' {} \; -print
+  134  find . -name '*.*' -exec grep -i 'Your account is no 'longer  {} \; -print
+  135  pwd
+  136  ls -trla
+  137  find ./src  -name '*.*' -exec grep -i 'Your account is no 'longer  {} \; -print
+  138  find ./src/  -name '*.*' -exec grep -i 'Your account is no 'longer  {} \; -print
+  139  find ./src/  -name '*.*' -exec grep -i 'Your account is no 'longer  {} \; -print
+  140  pwd
+  141  cd  /Users/frank.mastronardi/fxm/dev/mynodejs 
+  142  ls
+  143  node example.js 
+  144  pwd
+  145  cd  /Users/frank.mastronardi/fxm/dev/xml/myexcel/scrap/mypy 
+  146  ls
+  147  ls -tlara
+  148  py retrieve.py 
+  149  whereis python
+  150  python retrieve.py 
+  151  python bobo.py 
+  152  python 00mysoap.pl 
+  153  python 00mysoap.pl 
+  154  python 00mysoap.pl > list_qa.xml
+  155  python 00mysoap.pl > list_prod.xml
+  156  python 00mysoap.pl > list_prod.xml
+  157  python 00mysoap.pl > list_qa.xml
+  158  python 00mysoap.pl 
+  159  python 00mysoap.pl 
+  160  python 00mysoap.pl 
+  161  python 00mysoap.pl 
+  162  python 00mysoap.pl 
+  163  python 00mysoap.pl 
+  164  python 00mysoap.pl 
+  165  python 00mysoap.pl 
+  166  python 00mysoap.pl 
+  167  python 00mysoap.pl 
+  168  python 00mysoap.pl 
+  169  python 00mysoap.pl 
+  170  python 00mysoap.pl 
+  171  python 00mysoap.pl 
+  172  python 00mysoap.pl 
+  173  python 00mysoap.pl 
+  174  python 00mysoap.pl 
+  175  python 00mysoap.pl 
+  176  python 00mysoap.pl 
+  177  python 00mysoap.pl 
+  178  python 00mysoap.pl 
+  179  python 00mysoap.pl 
+  180  python 00mysoap.pl 
+  181  python 00mysoap.pl 
+  182  python 00mysoap.pl 
+  183  python 00mysoap.pl 
+  184  python 00mysoap.pl 
+  185  python 00mysoap.pl 
+  186  python 00mysoap.pl 
+  187  python 00mysoap.pl 
+  188  python 00mysoap.pl 
+  189  python 00mysoap.pl 
+  190  python 00mysoap.pl 
+  191  python 00mysoap.pl 
+  192  python 00mysoap.pl 
+  193  ls
+  194  pwd
+  195  cd  /Users/frank.mastronardi/fxm/dev/mynodejs 
+  196  ls
+  197  pwd
+  198   npm install express
+  199  ls
+  200  cat example.js 
+  201  touch myexpress.js
+  202  ls
+  203  edit myexpress.js 
+  204  open myexpress.js 
+  205  nodejs myexpress.js 
+  206  node myexpress.js 
+  207  ls 
+  208  cat exampl
+  209  cat example.js 
+  210   npm install -g express-generator@4
+  211  express /tmp/foo && cd /tmp/foo
+  212  npm install node-python
+  213  pwd
+  214  touch mypycgi.js
+  215  /Users/frank.mastronardi/fxm/dev/xml/myexcel/scrap/mypy/00mysoap.pl 
+  216  node mypycgi.js 
+  217  history
+  218  history | grep npm
+  219  npm install connect
+  220  node mypycgi.js 
+  221  npm install logger
+  222  node mypycgi.js 
+  223  node mypycgi.js 
+  224  node mypycgi.js 
+  225  node mypycgi.js 
+  226  node mypycgi.js 
+  227  node mypycgi.js 
+  228  node mypycgi.js 
+  229  whereis eclipse
+  230  pwd
+  231  touch package.json
+  232  open package.json 
+  233  npm install
+  234  touch app.js
+  235  open app.js 
+  236  node app.js 
+  237  ls -trla
+  238  mkdir views
+  239  mkdir public
+  240  node app.js 
+  241  npm install -g express
+  242  sudo npm install -g express
+  243  npm install 
+  244  express
+  245  ./express
+  246  node app.js 
+  247  ./node_modules/bin/express
+  248  ./node_modules/.bin/express 
+  249  ./node_modules/.bin/express 
+  250  node app.js 
+  251  node app.js 
+  252  node app.js 
+  253  node app.js 
+  254  node app.js 
+  255  node app.js 
+  256  node app.js 
+  257  node app.js 
+  258  node app.js 
+  259  node app.js 
+  260  node app.js 
+  261  node app.js 
+  262  node app.js 
+  263  node app.js 
+  264  node app.js 
+  265  node app.js 
+  266  node app.js 
+  267  node app.js 
+  268  node app.js 
+  269  node app.js 
+  270  node app.js 
+  271  node app.js 
+  272  node app.js 
+  273  sudo npm install connect-form
+  274  npm install connect-form
+  275  node app.js 
+  276  node app.js 
+  277  node app.js 
+  278  node app.js 
+  279  node app.js 
+  280  node app.js 
+  281  node app.js 
+  282  node app.js 
+  283  node app.js 
+  284  node app.js 
+  285  node app.js 
+  286  node app.js 
+  287  node app.js 
+  288  node app.js 
+  289  jade
+  290  npm install jade --global
+  291  sudo npm install jade --global
+  292  jade
+  293  ps
+  294  kill 79732
+  295  kill 79732
+  296  ps
+  297  kill -79732
+  298  kill -9 79732
+  299  ps
+  300  jade < ./views/index.jade 
+  301  jade < views/index.jade 
+  302  jade < index.jade 
+  303  jade  ./views index.jade 
+  304  cd views/
+  305  jade < index.jade 
+  306  jade  index.jade 
+  307  pwd
+  308  ls
+  309  jade  < index.jade 
+  310  jade  < index.jade 
+  311  jade  < index.jade 
+  312  jade  < index.jade 
+  313  cd ..
+  314  ls
+  315  node app.js 
+  316  node app.js 
+  317  node app.js 
+  318  node app.js 
+  319  node app.js 
+  320  node app.js 
+  321  node app.js 
+  322  node app.js 
+  323  node app.js 
+  324  node app.js 
+  325  node app.js 
+  326  node app.js 
+  327  node app.js 
+  328  node app.js 
+  329  node app.js 
+  330  node app.js 
+  331  node app.js 
+  332  ls  /tmp/69aff56ec6a25ab07a0fad2c84a867ee
+  333  ls -tlr  /tmp/69aff56ec6a25ab07a0fad2c84a867ee
+  334  more   /tmp/69aff56ec6a25ab07a0fad2c84a867ee
+  335  node app.js 
+  336  node app.js 
+  337  node app.js 
+  338  pwd
+  339  cd mynodejsSrc/
+  340  ls
+  341  node app.js 
+  342  node app.js 
+  343  node app.js 
+  344  node app.js 
+  345  pwd
+  346  pwd
+  347  node app.js 
+  348  node app.js 
+  349  node app.js 
+  350  node app.js 
+  351  node app.js 
+  352  ipconfig
+  353  ifconfig
+  354  ping 192.168.1.10
+  355  node app.js 
+  356  node app.js 
+  357  history
+  358  history 
+  359  history  | grep find
+  360  history | grep find
+  361  ./Contents/MacOS/iclicker 
+  362  ./Contents/MacOS/iclicker 
+  363  pwd
+  364  ls
+  365  ls ./Contents/MacOS/iclicker 
+  366  sl
+  367  ls
+  368  cd ..
+  369  ls
+  370  cd dbg-iclicker720/
+  371  ls
+  372  ls 
+  373  pwd
+  374  ls ./iclicker.app/
+  375  ls ./iclicker.app/Contents/MacOS/
+  376  ls ./iclicker.app/Contents/MacOS/iclicker 
+  377   ./iclicker.app/Contents/MacOS/iclicker 
+  378   ./iclicker.app/Contents/MacOS/iclicker 
+  379   ./iclicker.app/Contents/MacOS/iclicker 
+  380   ./iclicker.app/Contents/MacOS/iclicker 
+  381   ./iclicker.app/Contents/MacOS/iclicker 
+  382   ./iclicker.app/Contents/MacOS/iclicker 
+  383   ./iclicker.app/Contents/MacOS/iclicker 
+  384   ./iclicker.app/Contents/MacOS/iclicker 
+  385  cd  /Users/frank.mastronardi/workspace/iclicker720Qt521Sources/dbg-iclicker720/Classes/ECON\ 303-001 
+  386  ls
+  387  history
+  388  find ./SessionData/  -name '*.xml' -exec grep -i 'id' {} \; -print
+  389  find ./SessionData/  -name '*.xml' -exec grep -i 'id=0DA7A208' {} \; -print
+  390  find ./SessionData/  -name '*.xml' -exec grep -i 'id=#0DA7A208' {} \; -print
+  391  find ./SessionData/  -name '*.xml' -exec grep -i 'id=\#0DA7A208' {} \; -print
+  392  find ./SessionData/  -name '*.xml' -exec grep -i '0DA7A208' {} \; -print
+  393  find ./SessionData/  -name '*.xml' -exec grep -i '#0DA7A208' {} \; -print
+  394  find ./SessionData/  -name '*.xml' -exec grep -i '99B388A2' {} \; -print
+  395  find ./SessionData/  -name '*.xml' -exec grep -i '#0DA7A208' {} \; -print
+  396  find ./SessionData/  -name '*.xml' -exec grep -i '99B388A2' {} \; -print
+  397  ping 192.168.1.20
+  398  ifconfig
+  399  ping 192.168.1.20
+  400  ping 192.168.1.20
+  401  ping 192.168.243.224
+  402  ifconfig
+  403  ping 192.168.243.224
+  404  find ./SessionData/  -name '*.xml' -exec grep -i '#0DA7A208' {} \; -print
+  405  find ./SessionData/  -name '*.xml' -exec grep -i '99B388A2' {} \; -print
+  406  find ./SessionData/  -name '*.xml' -exec grep -i '#0DA7A208' {} \; -print
+  407  find ./SessionData/  -name '*.xml' -exec grep -i '99B388A2' {} \; -print
+  408  pwd
+  409   ./iclicker.app/Contents/MacOS/iclicker 
+  410  ls
+  411  cd ..
+  412  ls
+  413  pwd
+  414  cd ..
+  415  ls
+  416  ls -trla
+  417   ./iclicker.app/Contents/MacOS/iclicker 
+  418  ps
+  419  ps -a
+  420   ./iclicker.app/Contents/MacOS/iclicker 
+  421   ./iclicker.app/Contents/MacOS/iclicker 
+  422   ./iclicker.app/Contents/MacOS/iclicker 
+  423   ./iclicker.app/Contents/MacOS/iclicker 
+  424   ./iclicker.app/Contents/MacOS/iclicker 
+  425  /Users/frank.mastronardi/workspace/iclicker720Qt521Sources/dbg-iclicker720 
+  426  cd /Users/frank.mastronardi/workspace/iclicker720Qt521Sources/dbg-iclicker720/iclicker.app 
+  427  ls
+  428   ./iclicker.app/Contents/MacOS/iclicker 
+  429  cd ..
+  430   ./iclicker.app/Contents/MacOS/iclicker 
+  431   ./iclicker.app/Contents/MacOS/iclicker 
+  432  history
+  433  find . -name '*.cpp' -exec grep -i 'import' {} \; -print
+  434  find . -name '*.cpp' -exec grep -i '_FILE' {} \; -print
+  435  find . -name '*.cpp' -exec grep -i 'FMTIMEANALYSIS' {} \; -print
+  436  pwd
+  437  ls
+  438  pwd
+  439  cd ..
+  440  ls
+  441  ls -trla
+  442  cd I-clicker-7/
+  443  ls
+  444  ls -trla
+  445  find . -name '*.cpp' -exec grep -i 'FMTIMEANALYSIS' {} \; -print
+  446  find . -name '*.cpp' -exec grep -i '_FILE' {} \; -print
+  447  find . -name '*.cpp' -exec grep -i '__func__' {} \; -print
+  448  find . -name '*.cpp' -exec grep -i '#ifndef FMTIMEANALYSIS' {} \; -print
+  449  curl -X POST -d "fizz=buzz" http://requestb.in/1hqi1061
+  450  curl -X POST -d "fizz=FUCK" http://requestb.in/1hqi1061
+  451  find . -name '*.cpp' -exec grep -i '#ifndef FMTIMEANALYSIS' {} \; -print
+  452  ls
+  453  history
+  454  history | grep curl
+  455  /Users/frank.mastronardi/fxm/dev/mynodejs/mynodejsSrc/
+  456  touch mynotes.txt
+  457  pwd
+  458  cd /Users/frank.mastronardi/fxm/dev/mynodejs/mynodejsSrc 
+  459  touch mynotes.txt
+  460  ping 107.22.186.62
+  461  history
+  462  node app.js 
+  463  node app.js 
+  464  node app.js 
+  465  node app.js 
+  466  node app.js 
+  467  node app.js 
+  468  npm install nodemon
+  469  npm install -g nodemon
+  470  sudo npm install -g nodemon
+  471  nodemon app.js 
+  472  nodemon app.js 
+  473  nodemon app.js 
+  474  nodemon app.js 
+  475  history
+  476  history | grep npm 
+  477  sudo npm  install request
+  478  sudo npm  install request
+  479  nodemon app.js 
+  480  sudo npm  install needle
+  481  nodemon app.js 
+  482  history
+  483  sudo npm crpto
+  484  sudo npm install crpto
+  485  sudo npm install haslib
+  486  nodemon app.js 
+  487  sudo npm install crypto-js
+  488  nodemon app.js 
+  489  curl -X POST -d "fizz=buzz" http://requestb.in/upxrgaup
+  490  curl -X POST -d "fizz=YOu" http://requestb.in/upxrgaup
+  491  $ airport -s
+  492   airport -s
+  493  /usr/sbin/airport
+  494  whereis airport
+  495  locate airport
+  496  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+  497  locate airport
+  498  lsof -i | grep ESTABLISHED
+  499  lsof -i | grep ESTABLISHED
+  500  cd   /Users/frank.mastronardi/fxm/dev/mynodejs/mynodejsSrc 
+  501  history
+  502  history > bob.txt

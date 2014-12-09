@@ -30,7 +30,7 @@ function compile(str, path) {
 }
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 3031);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -108,6 +108,47 @@ app.get('/anytaxis11', function (req, res) {
   //next();
 });
 
+app.get('/guid/:id', function (req, res) {
+  console.log('Call a function in another .js file.');
+  var results = "wtf is a guid";
+  var date = new Date().toUTCString();
+  var method = "GET";
+  var type = "";
+  var len = "";
+  var str = method + ",," + type + "," + len + "," + date;
+  var cred_userid="b1394ae3-5216-43b0-abef-32ee4dee615d";
+
+  console.log("str = " + str);
+
+  seckey = req.params.id;
+   console.log(seckey);
+  var seckeyBytes = new Buffer(seckey.replace(/-/g, ''), 'hex');
+  console.log("seckeyBytes = " + seckeyBytes);
+  
+  var userIdBytes = new Buffer(cred_userid.replace(/-/g, ''), 'hex');
+console.log("userIdBytes = " + userIdBytes);
+  //console.log("length = " + userIdBytes.length);
+  //console.log("userIdBytes[] = " + userIdBytes);
+  //console.log("userIdBytes[0] = " + userIdBytes[0]);
+   //console.log("userIdBytes[1] = " + userIdBytes[1]);
+
+  console.log("base64 = "+ userIdBytes.toString('base64'));
+  //console.log(seckeyBytes[0]);
+  //console.log("results("+ seckeyBytes + ")");
+  var hmac = crypto.createHmac('sha1', seckeyBytes);
+  var sig = hmac.update(str).digest();
+
+  console.log("sigBase64    = "+ sig.toString('base64'));
+  console.log("userIdBase64 = "+ userIdBytes.toString('base64'));
+
+var auth = userIdBytes.toString('base64') + ':' + sig.toString('base64');
+console.log("auth = " + auth);
+console.log('Authorization' + ':' + 'TRGN ' + auth);
+
+   res.send('FM user ' + req.params.id);
+  //res.send('FM user ' + results + 'LLLLLLL');  
+  //next();
+});
 
 app.get('/', function (req, res) {
   res.render('index',

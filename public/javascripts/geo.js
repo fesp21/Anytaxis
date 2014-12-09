@@ -31,7 +31,9 @@ function geo_init00()
             //   1: permission denied
             //   2: position unavailable (error response from locaton provider)
             //   3: timed out
-            });
+            }
+,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true } 
+            );
 
         // navigator.geolocation.watchPosition(function (position) {
         //     document.forms[0].elements.lon.value = position.coords.longitude;

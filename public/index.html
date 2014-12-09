@@ -211,6 +211,8 @@ function doFunction(str)
     if (str == "anytaxis22/withloc/setLocale")
     {
         //alert('okoeeekkok');
+        //location.reload(true);
+        //window.location.reload()
         geo_init00();
             //getLocation(); return;    
         TestShit();
@@ -221,7 +223,7 @@ function doFunction(str)
     {
         var url = root + "/anytaxis22";
 
-        geo_init00();
+        //geo_init00();
         //getLocation(); return;    
         var loc = TestShit();
         var oLoc  = JSON.parse(loc);
@@ -272,8 +274,8 @@ function doFunction(str)
 </td>
     
     <td>
-        <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
-            Off Dutty
+        <div id="add-event-butto" class="button" onclick="window.location.reload();" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+            Off Dutty reload(1)
         </div>
         </td>
     </tr>
@@ -281,13 +283,13 @@ function doFunction(str)
     <tr>
         <td>
             <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22/withloc');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
-                *Mark Location
+                *Mark Location(3)
             </div>
         </td>
         
         <td>
             <div id="add-event-butto" class="button" onclick="doFunction('anytaxis22/withloc/setLocale');" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
-                Set Loc
+                Set Loc(2)
             </div>
         </td>
     </tr>
@@ -305,6 +307,6 @@ To: <input type="text" id="x_to" name="x_to" value="mastronardif@netcarrier.com;
 <br/> loc: <input type="text" id="x_address" name="x_address" value="ffff">
 
 
-<br/><i>Version: 101 Nov 28 2014 3:35</i>
+<br/><i>Version: 101 Nov 29 2014 3:46</i>
 
 </htmlTaxi11>

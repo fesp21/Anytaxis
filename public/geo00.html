@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=false;"/>
+  <link rel="stylesheet" type="text/css" href="../../Content/css/myletter.css" />
+    <title>Checking in </title> 
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body class="shipper" >
+
+    <form name= "WhereAmI" id="WhereAmI" action="../shipper/trackme" method="POST">
+             <button id="Button7" type="button" onclick="getLocation();">sho5w map(1)</button>
+        <br/><button id="Button2" type="button" onclick="TestShit();" > set city location(2) </button> 
+        <br/><button id="Button1" type="submit"> Set Location(3) </button>
+
+<div id="Div2" style ="width: 50%;border:double">
+<div id="mapholder"></div>
+    </div>
+        
+<hr/>
+                    <p>
+        Current Location (lat, lon):<br/>
+        <span id="currentLat">???</span>&deg;, <span id="currentLon">???</span>&deg;
+      </p>
+                    manual loc [<input id="IDmanualLoc" type="text" name="manualLoc" value="" />]
+                   
+
+               <input id="IDlatlon" type="text" name="latlon" value="" />
+                    
+                    <input id="lat" type="text" name="lat" value="" />
+                    <input id="lon" type="text" name="lon" value="" />
+
+
+        <div class="form">
+            <div class="row"><span class="label">Transaction:</span> <span class="value">
+                <input id="IDtransaction" type="text" name= "transaction" value="" />
+            </span></div>
+
+            <div class="row"><span class="label">Address:</span> <span class="value">
+                            <input type="text" id="Text1"   name= "gisaddress"  size="60" value="" />
+            </span></div>
+
+        </div>       
+
+        <!-- footer -->
+
+<!--the hidden shits-->
+  <input type="hidden" id="Hidden1" name= "transaction" value="{/Contract001/transaction}" />
+  <input type="hidden" id="IDpos"         name= "pos"         value="" />
+</form>    
+
+
+
+
+<script> 
+    geocoder = new google.maps.Geocoder();
+
+    function codeLatLng(lat, lng)
+    {
+        var info = "";
+        var latlng = new google.maps.LatLng(lat, lng);
+        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                console.log(results)
+                if (results[1]) {
+                    //formatted address
+                    
+                    //alert(results[0].formatted_address)
+                    //info = results[0].formatted_address + "df";
+                    document.forms[0].elements.gisaddress.value = results[0].formatted_address;
+
+                    //find country name
+                    for (var i = 0; i < results[0].address_components.length; i++) {
+                        for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+
+                            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                            if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                                //this is the object you are looking for
+                                city = results[0].address_components[i];
+                                break;
+                            }
+                        }
+                    }
+                    //city data
+                    //alert(city.short_name + " " + city.long_name)
+
+
+                } else {
+                    alert("No results found");
+                }
+            } else {
+                alert("Geocoder failed due to: " + status);
+            }
+        });
+
+        return info;
+    }
+
+
+    function myFlatten(position) 
+    {
+        var jsontext = '{' +
+                              '"position.coords.latitude":"'  + position.coords.latitude  + '"' +
+                             ',"position.coords.longitude":"' + position.coords.longitude + '"' +
+                             ',"position.timestamp":"'        + position.timestamp        + '"' +
+                             '}';
+
+        var pos = JSON.parse(jsontext);
+
+        result = JSON.stringify(pos);
+        return result;
+    }
+
+            
+    function TestShit()
+    {
+        var lat = document.forms[0].elements.lat.value;
+        var lng = document.forms[0].elements.lon.value;
+        var info = codeLatLng(lat, lng);
+        //document.forms[0].elements.lon.value = "clear the shit";
+        //alert('test shit');
+    }
+
+    function SetHiddenShits(position)
+    {
+        //document.forms[0].elements.lon.value = "clear the shit";
+        //alert('test shit');
+        document.forms[0].elements.lat.value = position.coords.latitude;
+        document.forms[0].elements.lon.value = position.coords.longitude;
+
+        //console.log(position);
+        //var jsonstr = JSON.stringify(position)
+        var fuck = myFlatten(position);
+
+        var jsonstr = JSON.stringify(fuck);
+        document.forms[0].elements.pos.value = jsonstr;
+
+    }
+
+</script>
+          
+
+    <script>
+        window.onload = function () {
+            var startPos;
+
+            
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    startPos = position;
+                    document.forms[0].elements.lat.value = startPos.coords.latitude;
+                }, function (error) {
+                    alert("Error occurred. Error code: " + error.code);
+                    // error.code can be:
+                    //   0: unknown error
+                    //   1: permission denied
+                    //   2: position unavailable (error response from locaton provider)
+                    //   3: timed out
+                });
+
+                navigator.geolocation.watchPosition(function (position) {
+                    document.forms[0].elements.lon.value = position.coords.longitude;
+
+                    document.getElementById("currentLat").innerHTML = position.coords.latitude;
+                    document.getElementById("currentLon").innerHTML = position.coords.longitude;
+                });
+            }
+        };
+
+        // Reused code - copyright Moveable Type Scripts - retrieved May 4, 2010.
+        // http://www.movable-type.co.uk/scripts/latlong.html
+        // Under Creative Commons License http://creativecommons.org/licenses/by/3.0/
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            var R = 6371; // km
+            var dLat = (lat2 - lat1).toRad();
+            var dLon = (lon2 - lon1).toRad();
+            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var d = R * c;
+            return d;
+        }
+        Number.prototype.toRad = function () {
+            return this * Math.PI / 180;
+        }
+    </script>
+
+<script>
+    var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        }
+        else { x.innerHTML = "Geolocation is not supported by this browser."; }
+    }
+
+    function showPosition(position) {
+        var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+        //        document.forms[0].elements.lat.value = position.coords.latitude;
+        SetHiddenShits(position);
+        //document.forms[0].elements.lon.value = position.coords.longitude;
+
+        var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+        + latlon + "&zoom=14&size=400x300&sensor=false";
+        document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = "User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "Location information is unavailable."
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = "The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = "An unknown error occurred."
+                break;
+        }
+    }
+</script>
+</body>
+</html>
